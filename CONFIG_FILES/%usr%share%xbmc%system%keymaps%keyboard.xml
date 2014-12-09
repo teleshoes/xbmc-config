@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <!-- This file contains the mapping of keys (gamepad, remote, and keyboard) to actions within XBMC -->
 <!-- The <global> section is a fall through - they will only be used if the button is not          -->
 <!-- used in the current window's section.  Note that there is only handling                       -->
@@ -42,7 +41,6 @@
       <q>Queue</q>
       <f>FastForward</f>
       <r>Rewind</r>
-      <y>SwitchPlayer</y>
       <left>Left</left>
       <right>Right</right>
       <up>Up</up>
@@ -54,6 +52,10 @@
       <return>Select</return>
       <enter>Select</enter>
       <backspace>Back</backspace>
+
+      <!-- F2-icon-thing on logitech kb -->
+      <backspace mod="ctrl">reloadkeymaps</backspace>
+
       <key id='65446'>Back</key>
       <m>ActivateWindow(PlayerControls)</m>
       <s>ActivateWindow(shutdownmenu)</s>
@@ -93,7 +95,7 @@
       <numpadseven>Number7</numpadseven>
       <numpadeight>Number8</numpadeight>
       <numpadnine>Number9</numpadnine>
-      <!-- <backslash>ToggleFullScreen</backslash> -->
+      <backslash>ToggleFullScreen</backslash>
       <home>FirstPage</home>
       <end>LastPage</end>
       <power>ActivateWindow(shutdownmenu)</power>
@@ -119,9 +121,6 @@
       <prev_track>SkipPrevious</prev_track>
       <stop>Stop</stop>
       <play_pause>Pause</play_pause>
-      <fastforward>FastForward</fastforward>
-      <rewind>Rewind</rewind>
-      <record/>
       <launch_mail></launch_mail>
       <launch_media_select>XBMC.ActivateWindow(MyMusic)</launch_media_select>
       <launch_app1_pc_icon>ActivateWindow(MyPrograms)</launch_app1_pc_icon>
@@ -163,6 +162,9 @@
   </LoginScreen>
   <Home>
     <keyboard>
+      <play_pause>XBMC.RunScript(/usr/local/bin/btn,pause)</play_pause>
+      <prev_track>XBMC.RunScript(/usr/local/bin/btn,prev)</prev_track>
+      <next_track>XBMC.RunScript(/usr/local/bin/btn,next)</next_track>
       <i>info</i>
       <end mod="ctrl">XBMC.ShutDown()</end>
     </keyboard>
@@ -234,10 +236,11 @@
       <t>ShowSubtitles</t>
       <t mod="ctrl">SubtitleAlign</t>
       <l>NextSubtitle</l>
+      <k>AudioNextLanguage</k>
       <left>StepBack</left>
       <right>StepForward</right>
-      <up>ChapterOrBigStepForward</up>
-      <down>ChapterOrBigStepBack</down>
+      <up>BigStepForward</up>
+      <down>BigStepBack</down>
       <a>AudioDelay</a>
       <escape>Fullscreen</escape>
       <c>Playlist</c>
@@ -485,8 +488,6 @@
   <Favourites>
     <keyboard>
       <backspace>Close</backspace>
-      <u>MoveItemUp</u>
-      <d>MoveItemDown</d>
     </keyboard>
   </Favourites>
   <NumericInput>
