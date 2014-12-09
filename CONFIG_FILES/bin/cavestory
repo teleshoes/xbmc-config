@@ -1,4 +1,0 @@
-#!/bin/bash
-sudo modprobe snd_bcm2835
-cd /home/pi/Games/cavestory
-./cavestory.sh

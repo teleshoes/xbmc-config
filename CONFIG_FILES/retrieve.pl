@@ -12,7 +12,7 @@ sub main(@){
     my $boing = `boing $file`;
     chomp $boing;
     print "$file => $boing\n";
-    system "rsync", "-avP", "$user\@$host:$file", $boing;
+    system "scp", "-r", "$user\@$host:$file", $boing;
   }
 }
 
