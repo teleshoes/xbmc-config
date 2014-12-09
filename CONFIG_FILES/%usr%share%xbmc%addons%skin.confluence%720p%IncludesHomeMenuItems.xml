@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <includes>
 	<include name="HomeSubMenuVideos">
 		<control type="image" id="90101">
@@ -189,6 +190,11 @@
 			<label>5</label>
 			<onclick>ActivateWindow(Settings)</onclick>
 		</control>
+		<control type="button" id="90120">
+			<include>ButtonHomeSubCommonValues</include>
+			<label>[COLOR FF757677]Open[/COLOR][COLOR FF8ABEE2]ELEC[/COLOR]</label>
+			<onclick>RunAddon(service.openelec.settings)</onclick>
+		</control>
 		<control type="button" id="90123">
 			<include>ButtonHomeSubCommonValues</include>
 			<label>7</label>
@@ -254,32 +260,29 @@
 		<control type="button" id="90142">
 			<include>ButtonHomeSubCommonValues</include>
 			<label>19023</label>
-			<onclick>ActivateWindow(PVR)</onclick>
-			<onclick>Setfocus(32)</onclick>
-			<onclick>Setfocus(11)</onclick>
+			<onclick>ActivateWindowAndFocus(MyPVR, 32,0, 11,0)</onclick>
 		</control>
 		<control type="button" id="90143">
 			<include>ButtonHomeSubCommonValues</include>
 			<label>19024</label>
-			<onclick>ActivateWindow(PVR)</onclick>
-			<onclick>Setfocus(33)</onclick>
-			<onclick>Setfocus(12)</onclick>
+			<onclick>ActivateWindowAndFocus(MyPVR, 33,0, 12,0)</onclick>
 		</control>
 		<control type="button" id="90144">
 			<include>ButtonHomeSubCommonValues</include>
-			<label>19163</label>
-			<onclick>ActivateWindow(PVR)</onclick>
-			<onclick>Setfocus(34)</onclick>
-			<onclick>Setfocus(13)</onclick>
+			<label>19069</label>
+			<onclick>ActivateWindowAndFocus(MyPVR, 31,0, 10,0)</onclick>
 		</control>
 		<control type="button" id="90145">
 			<include>ButtonHomeSubCommonValues</include>
-			<label>19040</label>
-			<onclick>ActivateWindow(PVR)</onclick>
-			<onclick>Setfocus(35)</onclick>
-			<onclick>Setfocus(14)</onclick>
+			<label>19163</label>
+			<onclick>ActivateWindowAndFocus(MyPVR, 34,0, 13,0)</onclick>
 		</control>
-		<control type="image" id="90146">
+		<control type="button" id="90146">
+			<include>ButtonHomeSubCommonValues</include>
+			<label>19040</label>
+			<onclick>ActivateWindowAndFocus(MyPVR, 35,0, 14,0)</onclick>
+		</control>
+		<control type="image" id="90147">
 			<width>35</width>
 			<height>35</height>
 			<texture border="0,0,0,3">HomeSubEnd.png</texture>
@@ -399,29 +402,11 @@
 	</include>
 	<include name="HomeAddonItemsPrograms">
 		<item>
-			<onclick>XBMC.RunScript(/usr/local/bin/daemon-run,/usr/local/bin/kiosk-tty)</onclick>
-			<icon>/usr/share/icons/term.png</icon>
+			<label>$INFO[system.addontitle(Skin.String(HomeProgramButton1))]</label>
+			<onclick>RunAddon($INFO[Skin.String(HomeProgramButton1)])</onclick>
+			<icon>$INFO[system.addonicon(Skin.String(HomeProgramButton1))]</icon>
 			<thumb>-</thumb>
-		</item>
-		<item>
-			<onclick>XBMC.RunScript(/usr/local/bin/daemon-run,/usr/local/bin/kiosk-xbmc,openbox-run,midori)</onclick>
-			<icon>/usr/share/icons/midori.png</icon>
-			<thumb>-</thumb>
-		</item>
-		<item>
-			<onclick>XBMC.RunScript(/usr/local/bin/daemon-run,/usr/local/bin/kiosk-xbmc,openbox-run,chromium)</onclick>
-			<icon>/usr/share/icons/chromium.png</icon>
-			<thumb>-</thumb>
-		</item>
-		<item>
-			<onclick>XBMC.RunScript(/usr/local/bin/daemon-run,/usr/local/bin/kiosk-xfce)</onclick>
-			<icon>/usr/share/icons/xfce.png</icon>
-			<thumb>-</thumb>
-		</item>
-		<item>
-			<onclick>RunAddon(script.raspbmc.settings)</onclick>
-			<icon>/usr/share/icons/raspbmc-settings.png</icon>
-			<thumb>-</thumb>
+			<visible>!IsEmpty(Skin.String(HomeProgramButton1))</visible>
 		</item>
 		<item>
 			<label>$INFO[system.addontitle(Skin.String(HomeProgramButton2))]</label>

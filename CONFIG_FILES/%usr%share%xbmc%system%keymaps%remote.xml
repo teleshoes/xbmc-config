@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <!-- This file contains the mapping of keys (gamepad, remote, and keyboard) to actions within XBMC -->
 <!-- The <global> section is a fall through - they will only be used if the button is not          -->
 <!-- used in the current window's section.  Note that there is only handling                       -->
@@ -58,11 +59,11 @@
       <skipminus>SkipPrevious</skipminus>
       <display>FullScreen</display>
       <start>PreviousMenu</start>
-      <record>Screenshot</record>
+      <record>Record</record>
       <volumeplus>VolumeUp</volumeplus>
       <volumeminus>VolumeDown</volumeminus>
       <mute>Mute</mute>
-      <power>XBMC.ActivateWindow(ShutdownMenu)</power>
+      <power>XBMC.ShutDown()</power>
       <myvideo>XBMC.ActivateWindow(MyVideos)</myvideo>
       <mymusic>XBMC.ActivateWindow(MyMusic)</mymusic>
       <mypictures>XBMC.ActivateWindow(MyPictures)</mypictures>
@@ -72,10 +73,10 @@
       <liveradio>XBMC.ActivateWindowAndFocus(MyPVR, 33,0, 12,0)</liveradio>
       <recordedtv>XBMC.ActivateWindowAndFocus(MyPVR, 34,0, 13,0)</recordedtv>
       <epgsearch>XBMC.ActivateWindowAndFocus(MyPVR, 35,0, 14,0)</epgsearch>
-      <red>XBMC.RunScript(/usr/local/bin/btn,red)</red>
-      <green>XBMC.RunScript(/usr/local/bin/btn,green)</green>
-      <blue>XBMC.RunScript(/usr/local/bin/btn,blue)</blue>
-      <yellow>XBMC.RunScript(/usr/local/bin/btn,yellow)</yellow>
+      <red>XBMC.ActivateWindow(MyPVR)</red>
+      <green>XBMC.ActivateWindow(MyVideos)</green>
+      <yellow>XBMC.ActivateWindow(MyMusic)</yellow>
+      <blue>XBMC.ActivateWindow(MyPictures)</blue>
       <zero>Number0</zero>
       <one>Number1</one>
       <two>JumpSMS2</two>
@@ -90,10 +91,6 @@
   </global>
   <Home>
     <remote>
-      <play>XBMC.RunScript(/usr/local/bin/btn,pause)</play>
-      <pause>XBMC.RunScript(/usr/local/bin/btn,pause)</pause>
-      <skipplus>XBMC.RunScript(/usr/local/bin/btn,next)</skipplus>
-      <skipminus>XBMC.RunScript(/usr/local/bin/btn,prev)</skipminus>
       <info>XBMC.ActivateWindow(SystemInfo)</info>
       <clear>XBMC.ActivateWindow(Weather)</clear>
       <hash>XBMC.ActivateWindow(Settings)</hash>
@@ -149,9 +146,9 @@
       <nine>Number9</nine>
       <left>StepBack</left>
       <right>StepForward</right>
-      <up>BigStepForward</up>
-      <down>BigStepBack</down>
-      <back>SmallStepBack</back>
+      <up>ChapterOrBigStepForward</up>
+      <down>ChapterOrBigStepBack</down>
+      <back>Back</back>
       <menu>OSD</menu>
       <start>OSD</start>
       <select>OSD</select>
@@ -192,7 +189,7 @@
       <right>NextPreset</right>
       <up>IncreaseRating</up>
       <down>DecreaseRating</down>
-      <back>LockPreset</back>
+      <back>Back</back>
       <title>CodecInfo</title>
       <select>XBMC.ActivateWindow(VisualisationPresetList)</select>
       <menu>OSD</menu>
@@ -514,8 +511,8 @@
   </Favourites>
   <FullscreenLiveTV>
     <remote>
-      <left>PreviousChannelGroup</left>
-      <right>NextChannelGroup</right>
+      <left>StepBack</left>
+      <right>StepForward</right>
       <up>ChannelUp</up>
       <down>ChannelDown</down>
     </remote>
