@@ -2,7 +2,7 @@
 use strict;
 use warnings;
 
-my $host = `pi`;
+my $host = `openelec`;
 my $user = "root";
 
 sub main(@){
